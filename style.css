@@ -1,0 +1,128 @@
+/* style.css */
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the video player */
+.video-player {
+    width: 80%;
+    max-width: 800px;
+    background-color: #000; /* Black background for the video */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease; /* Optional: smooth transition on hover */
+}
+
+/* Video styling */
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Slight rounding for the video itself */
+}
+
+/* Box for the controls with border-radius and blur background */
+.controls {
+    position: absolute;
+    bottom: -70px; /* Start the controls hidden (below the video) */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    backdrop-filter: blur(10px); /* Apply blur effect to the background */
+    border-radius: 10px; /* Rounded corners for the control box */
+    z-index: 1; /* Ensure the controls are on top of the video */
+    transition: bottom 0.3s ease; /* Smooth slide-up effect */
+}
+
+/* Video player hover effect: show controls */
+.video-player:hover .controls {
+    bottom: 0; /* Slide up when hovering */
+}
+
+/* Play/Pause button with less border-radius and transparent background */
+.play-pause-btn,
+.fullscreen-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff; /* White border */
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Less border-radius */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.play-pause-btn:hover,
+.fullscreen-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+}
+
+/* Progress bar styling */
+.progress-bar {
+    width: 60%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2); /* Light white background */
+    border-radius: 10px;
+    height: 5px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    background: #fff; /* White slider thumb */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.progress-bar::-moz-range-thumb {
+    background: #fff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+/* Volume control with different color */
+.volume-control {
+    width: 100px;
+    cursor: pointer;
+    background: rgba(0, 255, 255, 0.3); /* Cyan background for the volume control */
+    border-radius: 10px;
+    height: 5px;
+}
+
+.volume-control::-webkit-slider-thumb {
+    background: #00bcd4; /* Cyan slider thumb */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.volume-control::-moz-range-thumb {
+    background: #00bcd4;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+/* Fullscreen button */
+.fullscreen-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+/* Optional extra styling for buttons on hover */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

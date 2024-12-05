@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <iframe src="index.html?video=your-video.mp4" width="800" height="450" frameborder="0"></iframe>
+    <div class="video-player">
+        <video id="custom-video">
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
+        <div class="play-pause-btn-container">
+            <div class="play-pause-btn" id="playPauseBtn">
+                <div class="play-icon">▶️</div>
+                <div class="pause-icon">❚❚</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="playPauseBtn" class="play-pause-btn">Play</button>
+
+            <input type="range" id="progressBar" class="progress-bar" value="0" max="100">
+
+            <div class="volume-container">
+                <input type="range" id="volumeControl" class="volume-control" value="100" max="100">
+            </div>
+
+            <button id="fullscreenBtn" class="fullscreen-btn">Fullscreen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
